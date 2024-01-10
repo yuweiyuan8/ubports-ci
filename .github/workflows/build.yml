@@ -9,12 +9,10 @@
 name: Build System Image
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
   push:
-    branches:
-      - master
-  release:
-    types: [published]
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
 
