@@ -22,7 +22,7 @@ jobs:
 
     env:
       VENDOR: asus
-      DEVICE: Z00A
+      DEVICE: asus_Z00A
       ANDROID_ROOT: /home/runner/work/halium/
 
     steps:
