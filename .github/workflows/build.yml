@@ -64,6 +64,7 @@ jobs:
     - name: Build HAL
       run: |
         wget https://raw.githubusercontent.com/yuweiyuan8/local_manifests/master/fixup-mountpoints -O $ANDROID_ROOT/halium/hybris-boot/fixup-mountpoints
+        wget https://raw.githubusercontent.com/yuweiyuan8/local_manifests/master/executable.mk -O $ANDROID_ROOT/build/core/executable.mk
         chmod +x build-hal.sh
         bash -x build-hal.sh
       shell: bash
