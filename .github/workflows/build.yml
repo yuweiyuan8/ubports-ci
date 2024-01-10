@@ -17,7 +17,7 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     env:
       VENDOR: asus
@@ -28,17 +28,23 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     
+    # Cleanup The Actions Workspace Using Custom Composite Run Actions
+    - name: Cleanup
+      uses: rokibhasansagar/slimhub_actions@main
+
     - name: Initialization environment
       run: |
+        sudo df -h
+        sudo free -m
         sudo apt-get update
         sudo apt-get install -y \
-        openjdk-8-jdk android-tools-adb bc \
-        bison build-essential curl flex g++-multilib \
-        gcc-multilib gnupg gperf imagemagick lib32ncurses5-dev \
-        lib32readline-dev lib32z1-dev libesd0-dev liblz4-tool \
-        libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev \
-        libxml2 libxml2-utils lzop pngcrush rsync schedtool \
-        squashfs-tools xsltproc yasm zip zlib1g-dev git
+        openjdk-8-jdk android-tools-adb bc bison \
+        build-essential curl flex g++-multilib gcc-multilib gnupg gperf \
+        imagemagick lib32ncurses-dev \
+        lib32readline-dev lib32z1-dev  liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev \
+        libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc yasm zip zlib1g-dev \
+        qemu-user-static qemu-system-arm e2fsprogs simg2img \
+        libtinfo5 libncurses5 gzip virtualenv
         sudo docker rmi `docker images -q`
         sudo rm -rf \
           /usr/share/dotnet \
