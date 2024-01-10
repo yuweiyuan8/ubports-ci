@@ -10,6 +10,6 @@ make -j$(nproc) recoveryimage
 make -j$(nproc) systemimage 
 
 echo "md5sum halium-boot.img and system.img"
-md5sum $ANDROID_ROOT/out/target/product/kenzo/halium-boot.img
-md5sum $ANDROID_ROOT/out/target/product/kenzo/recovery.img
-md5sum $ANDROID_ROOT/out/target/product/kenzo/system.img
+md5sum $ANDROID_ROOT/out/target/product/Z00A/halium-boot.img
+md5sum $ANDROID_ROOT/out/target/product/Z00A/recovery.img
+md5sum $ANDROID_ROOT/out/target/product/Z00A/system.img
