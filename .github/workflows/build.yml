@@ -21,8 +21,8 @@ jobs:
     container: ubuntu:18.04
 
     env:
-      VENDOR: asus
-      DEVICE: Z00A
+      VENDOR: xiaomi
+      DEVICE: lmi
       ANDROID_ROOT: /home/runner/work/halium/
 
     steps:
@@ -57,7 +57,7 @@ jobs:
         source halium.env
         mkdir -p $ANDROID_ROOT
         cd $ANDROID_ROOT
-        repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
+        repo init -u https://github.com/Halium/android -b halium-11.0 --depth=1
         mkdir -p $ANDROID_ROOT/.repo/local_manifests
         wget https://raw.githubusercontent.com/yuweiyuan8/local_manifests/master/"$DEVICE".xml -O $ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml
         repo sync -j8 -c --no-clone-bundle --no-tags
@@ -74,13 +74,13 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: halium-boot image
-        path: /home/runner/work/halium/out/target/product/Z00A/halium-boot.img
+        path: /home/runner/work/halium/out/target/product/lmi/halium-boot.img
 
     - name : Upload recovery image
       uses: actions/upload-artifact@master
       with:
         name: Recovery image
-        path: /home/runner/work/halium/out/target/product/Z00A/recovery.img
+        path: /home/runner/work/halium/out/target/product/lmi/recovery.img
 
     - name : Upload system image
       uses: actions/upload-artifact@master
