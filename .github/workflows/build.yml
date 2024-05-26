@@ -64,8 +64,6 @@ jobs:
     
     - name: Build HAL
       run: |
-        wget https://raw.githubusercontent.com/yuweiyuan8/local_manifests/master/fixup-mountpoints -O $ANDROID_ROOT/halium/hybris-boot/fixup-mountpoints
-        wget https://raw.githubusercontent.com/yuweiyuan8/local_manifests/master/executable.mk -O $ANDROID_ROOT/build/core/executable.mk
         chmod +x build-hal.sh
         bash -x build-hal.sh
       shell: bash
@@ -86,4 +84,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: System image
-        path: /home/runner/work/halium/out/target/product/Z00A/system.img
+        path: /home/runner/work/halium/out/target/product/lmi/system.img
