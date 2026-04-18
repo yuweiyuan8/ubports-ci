@@ -22,7 +22,7 @@ jobs:
     env:
       VENDOR: xiaomi
       DEVICE: lmi
-      ANDROID_ROOT: /home/runner/work/halium/
+      ANDROID_ROOT: /home/runner/work/ubports-ci/ubports-ci
 
     steps:
     - name: 大容量空间支持
@@ -38,10 +38,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     
-    # Cleanup The Actions Workspace Using Custom Composite Run Actions
-    - name: Cleanup
-      uses: rokibhasansagar/slimhub_actions@main
-
     - name: Initialization environment
       run: |
         sudo df -h
