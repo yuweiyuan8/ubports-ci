@@ -60,8 +60,8 @@ jobs:
     - name: Downloading source code
       run: |
         source halium.env
-        mkdir -p $GITHUB_WORKSPACE/halium
-        cd $GITHUB_WORKSPACE/halium
+        mkdir -p $ANDROID_ROOT
+        cd $ANDROID_ROOT
         repo init -u https://github.com/Halium/android -b halium-11.0 --depth=1
         mkdir -p $ANDROID_ROOT/.repo/local_manifests
         wget https://raw.githubusercontent.com/yuweiyuan8/local_manifests/master/"$DEVICE".xml -O $ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml
