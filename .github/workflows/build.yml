@@ -77,16 +77,16 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: halium-boot image
-        path: /home/runner/work/halium/out/target/product/lmi/halium-boot.img
-
+        path: /home/runner/work/ubports-ci/ubports-ci/out/target/product/lmi/halium-boot.img
+        
     - name : Upload recovery image
       uses: actions/upload-artifact@master
       with:
         name: Recovery image
-        path: /home/runner/work/halium/out/target/product/lmi/recovery.img
+        path: /home/runner/work/ubports-ci/ubports-ci/out/target/product/lmi/recovery.img
 
     - name : Upload system image
       uses: actions/upload-artifact@master
       with:
         name: System image
-        path: /home/runner/work/halium/out/target/product/lmi/system.img
+        path: /home/runner/work/ubports-ci/ubports-ci/out/target/product/lmi/system.img
