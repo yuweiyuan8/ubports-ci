@@ -6,7 +6,7 @@ cd $ANDROID_ROOT
 source build/envsetup.sh
 #export USE_CCACHE=1
 breakfast $DEVICE
-sed -i '98i\\t"curl": Allowed,' build/soong/ui/build/paths/config.go
+ALLOW_MISSING_DEPENDENCIES=true
 make -j$(nproc) halium-boot
 make -j$(nproc) recoveryimage
 #make -j$(nproc) systemimage 
