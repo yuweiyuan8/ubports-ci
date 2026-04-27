@@ -2,7 +2,7 @@
 rm -rf .repo
 source halium.env
 cd $ANDROID_ROOT
-export LINK_FULL TARGET
+
 source build/envsetup.sh
 #export USE_CCACHE=1
 breakfast $DEVICE
