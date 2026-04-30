@@ -7,10 +7,10 @@ source build/envsetup.sh
 #export USE_CCACHE=1
 breakfast $DEVICE
 make -j$(nproc) halium-boot
-make -j$(nproc) recoveryimage
-#make -j$(nproc) systemimage 
+#make -j$(nproc) recoveryimage
+make -j$(nproc) systemimage 
 
 echo "md5sum halium-boot.img and system.img"
 md5sum $ANDROID_ROOT/out/target/product/lmi/halium-boot.img
-md5sum $ANDROID_ROOT/out/target/product/lmi/recovery.img
-#md5sum $ANDROID_ROOT/out/target/product/lmi/system.img
+#md5sum $ANDROID_ROOT/out/target/product/lmi/recovery.img
+md5sum $ANDROID_ROOT/out/target/product/lmi/system.img
